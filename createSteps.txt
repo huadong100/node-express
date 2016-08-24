@@ -1,0 +1,24 @@
+1、新建一个目标文件夹，名字当然要霸气了，就叫“ myproject ” 吧...
+
+2、在终端中输入(当然前提是安装了，这里就不介绍了)  npm init
+	然后我们的老管家npm就会忠心耿耿的问：主淫你的工程名叫啥？版本号怎么定？要不要整点法律文书啥子的？
+	一路回车后顺利完成项目初始化，这时在文件夹 “ myproject ” 下就出现一个 “ package.json ” 的文件（这个文件是老关键npm担心忘记东西，所以用来记录用的）；
+
+3、现在我们可以安装 “ express ” 了
+	npm install express --save-dev
+(--save的目的是让老管家纪录下来，－dev则是告诉老管家这个包只是我们开发阶段用的，以后正式发布说不定就换了)
+
+4、上面安装express后文件夹里就多出了node_modules文件夹，在myproject文件夹下建立app.js文件，并写入如下内容
+
+var express = require('express');
+var app = express();
+
+app.get('/',function(req,res){
+	res.send('hello world');
+});
+
+app.listen(3000,function(){
+	console.log('server is running at 3000');
+});
+
+5、在终端里用node跑跑看，如果顺利，然后打开浏览器输入localhost:3000,当我们看到熟悉的“ hello world ”时，是不是应该露出一个大大的微笑😊😊😊
